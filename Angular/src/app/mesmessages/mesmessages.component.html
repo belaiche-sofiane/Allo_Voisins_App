@@ -1,0 +1,57 @@
+
+<div class="maClasse" style="background-color: tomato;">
+<div class="split left" style="margin-top: 7%;">
+    
+      <div class="table table-image" >
+          <table class="table table" id="table" >
+              
+              <thead>
+              <tr style="width:20%;"> 
+                  <th></th>
+                  <th> Utilisateur:</th>
+                  <th> Message </th>
+                 
+                  <th> Date </th>
+               
+              </tr>
+          </thead>
+          <tbody>
+              
+          <tr *ngFor='let message of messages' class="table-primary">
+              
+              <td>  Reçu de  </td>
+              <td> {{message['emailEmetteur'] }}</td>  
+              <td> {{message['message'] }}   </td>
+              
+              <td>  {{message['date'] }}  </td>
+             
+          </tr>
+          <tr *ngFor='let messag of messagesEnvoyes'class="table-success" >
+              
+              <td> Envoyé à </td>
+              <td> {{messag['emailReceveur'] }}</td>  
+              <td> {{messag['message'] }}   </td>
+              
+              <td>  {{messag['date'] }}  </td>
+             
+          </tr> 
+      </tbody>
+      </table> 
+      <br>
+      <br>
+      <br> 
+       
+      </div> 
+      <hr>
+      <form (ngSubmit)="onSubmit()" #InscriptionForm="ngForm" style="margin-left: 30px;">
+            <input type="text"  class="form-control" placeholder=" saisir le mail de destinataire"style="width:1000px;"  required [(ngModel)]="contact['emailReceveur']" name="emailReceveur"/>   
+        <input type="text"  class="form-control" placeholder=" saisir votre message svp ici" style="height: 200px;width:1000px;"  required [(ngModel)]="contact['message']" name="message"/>
+        <input type="submit" value="Envoyer">
+      </form> 
+      
+  </div>
+</div>
+ 
+ 
+
+         

@@ -1,0 +1,67 @@
+
+
+
+  @import url("https://fonts.googleapis.com/css?family=Lato");
+
+a {
+	color: white;
+}
+body {
+	
+	background-color: orange;
+	font-size: 40px;
+	font-family: "Lato", sans-serif;
+	overflow-x: hidden;
+}
+
+header nav {
+	background-color: orange;
+	width: 100%;
+	
+	vertical-align: middle; 
+	height: 6.6rem;
+
+
+}
+
+header nav .nav-common {
+	display: inline-block;
+}
+
+header nav .logo {
+	width: 16%;
+	text-align: center;
+	font-size: 16px;
+}
+
+header nav ul {
+	width: 65%;
+	list-style: none;
+	/*  font-size: 0;*/
+  font-size: 15px;
+  
+}
+
+header nav ul li {
+	display: inline-block;
+	width: 20%;
+	
+}
+
+header nav ul li a {
+	text-transform: uppercase;
+	color: white;
+	font-size: 28px;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+header nav ul li a:hover {
+	color: rgba(89, 89, 89, 0.6);
+}
+
+header nav .nav-icon {
+	width: 7.5%;
+	text-align: center;
+	font-size: 10px;
+}

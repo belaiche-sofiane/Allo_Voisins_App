@@ -1,0 +1,50 @@
+<div *ngIf="user|async ">
+    
+       <h5 style="margin-left: 800px;color: green;"> {{message}}</h5>    
+    
+            <div class="row" style="width: 2500px; margin-left: 300px;margin-top: 200px;">
+                <div class="col-12">
+        <div class="table table-bordered">
+            <table class="table table" id="table">
+                
+                <thead>
+                <tr style="width:20%;"> 
+                    
+                    <th scope="col"> Produit</th>
+                    <th scope="col"> Prix </th>
+                   
+                    <th scope="col"> Image </th>
+                    <th> Temps de location</th>
+                    
+                    
+                    <th scope="col"> Utilisateur </th>
+                    <th scope="col"> Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr *ngFor='let proposition of propositions' >
+                
+        
+               
+                <td> {{proposition.nom}}</td>  
+                <td> {{proposition['prixto'] }}  € </td>
+                <td>   <img src="{{proposition['photo']}}" width="100px" height="100px"> </td>
+               
+                     
+        
+                <td>  {{proposition['temps'] }} jour(s)
+                    
+                    
+                </td>
+                
+               
+                <td> {{proposition.email}} </td>
+                <td>  <button class="btn btn-primary" (click)="OffreAccepte(proposition)"> Accepter l'offre</button>  <button class="btn btn-outline-danger" (click)="OffreRefusee(proposition)"> Refuser l'offre</button> </td>
+            </tr>
+        </tbody>
+        </table> 
+        </div>
+        </div>
+        
+  

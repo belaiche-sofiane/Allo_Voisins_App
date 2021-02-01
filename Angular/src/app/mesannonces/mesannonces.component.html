@@ -1,0 +1,104 @@
+<div *ngIf="user|async ">
+   
+    <div id="search-form" action="">
+        <div>
+          <input id="search-input" list="browsers" type="text" [(ngModel)]="nom" (input)="search()" type="text" (click)="record()" placeholder="Search.." name="search" style="margin-top: 7%;">
+        </div>
+        
+      </div>
+    
+
+        <p style="color: red; margin-left: 30%;"> {{message}} </p>
+
+     
+            <div class="row" style="width: 2500px;margin-left: 300px;margin-top: 100px;">
+                <div class="col-12">
+        <table class="table table-bordered" id="table">
+            
+            <thead>
+            <tr > 
+                
+                <th scope="col"> Produit</th>
+                <th scope="col"> Prix </th>
+               
+                <th scope="col"> Image </th>
+                <th scope="col"> Description</th>
+                
+                <th scope="col"> Action</th>
+                
+                <th scope="col"> Date d'ajout</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr *ngFor='let produit of annonces' >
+            
+    
+           
+            <td> {{produit.nom}}</td>  
+            <td> {{produit['prix'] }}  € </td>
+            <td>   <img src="{{produit['lienPhoto']}}" width="100px" height="100px"> </td>
+           
+                 
+    
+            <td>  {{produit['descriptif'] }} 
+                
+                
+            </td>
+            
+            <td>  <p class="card-text mx-auto"><input type="submit" value="Supprimer" 
+                class="btn btn-danger"  (click)="Supprime(produit.id)" /> </p>   
+                <input type="submit"  class="btn btn-outline-info"   (click)="getProduitDetail(produit)" value="Détails">
+            </td> 
+            
+            <td> {{produit.date}} </td>
+        </tr>
+    </tbody>
+    </table> 
+    </div>
+    </div>
+    </div> 
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+        

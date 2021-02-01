@@ -1,0 +1,97 @@
+
+ <div class="split right">
+    <div id=container>
+      AlloVoisins 
+      <div id=flip>
+        <div><div> Simple</div></div>
+        <div><div> Rapide</div></div>
+        <div><div> Gratuit</div></div>
+      
+      </div>
+      <p>Le coup de pouce </p> 
+      <p>du quotidien ! </p>
+    </div>
+    
+  </div>
+  
+   <div class="split left" style="margin-top: 4%;">
+    <div *ngIf="user|async">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRormNx-cWkV0Ggs-j5Jnk6g6x7JSyVqRh7uA&usqp=CAU"  alt="Avatar" style="width:200px;margin-left: 200px;">
+  <h6 style="margin-left: 50px;"> {{user['_value']}}</h6>
+  </div>
+   <br>
+  
+  <table  class="table table-striped">
+      
+    <thead>
+      <tr>
+        <th> </th>
+        <th>  </th>
+        
+      </tr>
+  </thead>
+  
+    <tbody>
+  
+      <tr *ngFor="let categorie of categories">
+        <td>{{categorie}} </td>
+        <td> <button type="button" class="btn btn-info" (click)="produitsParCategorie(categorie)">Voir</button></td>
+       
+      </tr>
+   </tbody>
+</table>
+ </div>
+  
+   <div class="container bcontent">
+  <br>
+    <div id="search-form" action="">
+      <div>
+        <input id="search-input" list="browsers" type="text" [(ngModel)]="nom"type="text"  (input)="search()"  placeholder="Search.." name="search" style="width: 1000px;height: 100px;margin-left: 300px;">
+        <a (click)="record()" style="margin-top: 1.7%;">   <svg xmlns="http://www.w3.org/2000/svg"   width="50" height="50" id="a" stylefill="currentColor" class="bi bi-mic" viewBox="0 0 16 16" >
+        
+        <path fill-rule="evenodd" d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+          <path fill-rule="evenodd" d="M10 8V3a2 2 0 1 0-4 0v5a2 2 0 1 0 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
+        </svg> </a>
+   
+      </div>
+      
+    </div>
+    <hr />
+    <div *ngFor='let produit of annonces' >
+    <div class="card" style="width: 1500px;height: 415px;">
+        <div class="row no-gutters">
+            <div class="col-sm-2">
+              <div *ngIf="produit.lienPhoto != '' "> 
+                <img class="card-img" src="{{produit['lienPhoto']}}"  style="width: 200px;height: 200px;">
+              </div>
+              <div *ngIf="produit.lienPhoto == '' ">  
+                <img class="card-img" src="/assets/image.png" style="width: 200px;height: 200px;" >
+              </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{produit['nom']}}</h5>
+                    <p class="card-text" style="width: 1000px;">{{produit['descriptif']}}</p>
+                    <p class="card-text" style="width: 1500px;margin-left: 1000px;margin-top:-100px;color: yellowgreen;"><b>{{produit['prix']}} €</b></p>
+                    <p class="card-text" style="width: 1000px;">{{produit['categorie']}}</p>
+                    
+                    
+                    <div *ngIf= "user|async">
+                    <a class="btn btn-primary"    (click)="getProduitDetail(produit)" value="Consulter">Consulter</a>
+                  </div>
+                  <div *ngIf= "!(user|async)">
+                    <a routerLink="/membre/connexion" class="btn btn-primary"> Connectez Vous</a>
+                  </div>
+                  
+                    <a href="">
+                      
+                        <span  class="badge purple mr-1" style="margin-left:700px ;"> Publié à {{user['_ville']}}, le {{produit['date']}}</span>
+                    </a>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  </div>

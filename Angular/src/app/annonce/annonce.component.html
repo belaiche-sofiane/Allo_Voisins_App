@@ -1,0 +1,86 @@
+
+<!--Main layout-->
+<main class="mt-5 pt-4">
+  
+  <div class="container dark-grey-text mt-5">
+    <!--Grid row-->
+    <div class="row wow fadeIn">
+      <!--Grid column-->
+      <div class="col-md-6 mb-4">
+        <div *ngIf="produit.lienPhoto != '' "> 
+        <img src="{{ produit.lienPhoto }}" class="img-fluid" alt="" style="width: 300px;height: 300px;"/>
+        </div>
+        <div *ngIf="produit.lienPhoto == '' ">  
+          <img class="img-fluid" src="/assets/image.png" style="width: 300px;height: 300px;" >
+        </div>
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-md-6 mb-4">
+        <!--Content-->
+        <div class="p-4">
+          <div class="mb-3">
+            <a href="">
+              <span class="badge purple mr-1"
+                >Nom: {{ produit.nom}}</span>
+                <span  class="badge purple mr-1"> Contact: {{produit.email}} Publié le {{DateAnnonce}}</span>
+            </a>
+          </div>
+
+          <p class="lead">
+            <span class="mr-1"> Prix: {{ produit.prix}}€ </span>
+          
+          </p>
+
+          <p class="lead font-weight-bold">Description</p>
+
+          <p>
+            {{ produit.descriptif }}
+          </p>
+       <label>  Le temps:  </label> <input type="number"  id="name" style="width:100px;" value="1" min="1" max="180" step="1"> Jours
+      <div *ngIf="produit.type == 'proposition'">
+        <a       (click)="ngOnInit()"> Le prix total: </a> <input type="text"  value= "{{prixTotal}}€">  
+      </div>
+     
+          <br>
+          <div *ngIf="user['_value'] != produit.email">
+           <div *ngIf="produit.type =='proposition'">
+             <div *ngIf="produit.disponibilite != 0">
+            <button
+              *ngIf="user | async"
+              class="btn btn-primary btn-md my-0 p"
+              type="submit"
+              (click)="ajoutpanier(produit)"
+            >
+              Lui faire une proposition
+              
+            </button>
+            
+          </div>
+          <div *ngIf="produit.disponibilite == 0">
+            <h6 style="color: red;"> Produit non disponible</h6>
+          </div>
+          </div>
+          <br>
+          <br>
+          <div *ngIf="produit.type == 'recherche'">
+          <button class="btn btn-warning"(click)="ajoutpanier(produit)" > Proposer mes services</button>
+          </div>
+            <form (ngSubmit)="onSubmit()" #InscriptionForm="ngForm">
+              <input type="text"  class="form-control" placeholder=" saisir votre message svp ici" style="height: 200px;width:700px;"  required [(ngModel)]="contact['message']" name="message"/>
+            <br>
+              <input type="submit" class="btn btn-info" value="Envoyer">
+          </form>
+        </div>
+        </div>
+        <!--Content-->
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+
+    <hr />
+  </div>
+</main>

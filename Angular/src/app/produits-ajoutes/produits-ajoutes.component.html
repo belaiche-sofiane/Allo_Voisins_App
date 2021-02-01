@@ -1,0 +1,42 @@
+
+
+<div id=container>
+
+    <form (ngSubmit)="onSubmit()" #InscriptionForm="ngForm">
+      <div>
+        <input type="radio" id="huey" name="drone" value="recherche" [(ngModel)]="produitAjoute['type']"
+               checked>
+        <label for="huey"> Je cherche une location</label>
+      </div>
+      
+      <div>
+        <input type="radio" id="dewey" name="drone" value="proposition" [(ngModel)]="produitAjoute['type']">
+        <label for="dewey">Je propose une location</label>
+      </div>
+        <label for="nom"> Nom </label>
+        <input type="text" class="form-control" placeholder="nom.." required [(ngModel)]="produitAjoute['nom']" name="nom" />
+      <br/>
+      <label> Catégorie </label>
+      <input type="text" class="form-control"  placeholder="Catégorie" required [(ngModel)]="produitAjoute['categorie']" name="categorie" />
+      
+        <label> Descriptif </label>
+        
+        <input type="text" class="form-control" style="height: 200px;" placeholder="Descriptif" required [(ngModel)]="produitAjoute['descriptif']" name="descriptif" />
+    
+    <br/>
+      
+      <label> Prix </label>
+      <input type="text" class="form-control" placeholder="prix." required [(ngModel)]="produitAjoute['prix']" name="prix" />
+    
+      <br/>
+      
+      <label> Photo</label>
+      <input type="text" class="form-control" required [(ngModel)]="produitAjoute['lienPhoto']" placeholder="lien de la photo" name="photo"/>
+      <br/>
+      
+      <input type="submit" class="btn btn-outline-primary " value="Enregistrer"/>
+    </form>
+    <p> {{message}} </p>
+    
+    </div>
+ 

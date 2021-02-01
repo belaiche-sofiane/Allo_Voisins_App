@@ -1,0 +1,68 @@
+
+
+<div *ngIf="!(user|async)">
+  <nav class="navbar navbar-expand-lg navbar-success bg-success">
+  <a class="navbar-brand" href="#">AlloVoisins</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/annonces">Annonces</a>
+      </li>
+      
+     
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/membre/connexion">Connexion</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/inscription">Inscription</a>
+      </li>
+    </ul>
+  </div>
+</nav> 
+</div>
+
+<div *ngIf="user|async">
+  <nav class="navbar navbar-expand-lg navbar-success bg-success">
+  <a class="navbar-brand" href="#">AlloVoisins</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/annonces">Annonces</a>
+      </li>
+      
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/mesmessages">Messages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/ajouter">Ajouter une annonce</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/mesannonces"> Mes annonces</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/offres"> Offres reçus</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/meslocations/:email"> Mes Propositions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="deconnexion()">Déconnexion</a>
+      </li>
+    </ul>
+  </div>
+</nav> 
+</div>

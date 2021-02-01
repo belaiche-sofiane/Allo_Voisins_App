@@ -1,0 +1,32 @@
+<br>
+<br>
+
+<div id="container">
+<form (ngSubmit)="onSubmit()" #incriptionForm="ngForm">
+	<div class="form-group">
+	<label for="inputEmail" > Email </label  >
+	<input type="text" class="form-control" placeholder="email.." 
+	required [(ngModel)]="utilisateur['email']" name="email" />
+</div>
+
+<div class="form-group">
+	<label for="inputPassword"> Mot de passe </label>
+	<input type="password" class="form-control" 
+	placeholder="mot de passe.." required [(ngModel)]="utilisateur['password']" name="password" />
+</div>
+
+
+	<input type="submit" value="Se connecter" class="btn btn-outline-primary" />
+
+</form>
+<br/>
+   
+<label>Nouveau client? &nbsp;</label>
+  
+  <a   (click)="creerCompte()" role="button" style="color:blue">S'inscrire ici </a>
+
+
+
+<p>{{message}}</p>
+
+</div>

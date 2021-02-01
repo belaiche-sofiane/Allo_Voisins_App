@@ -1,0 +1,37 @@
+body {
+    font-family: Arial;
+    background-image:url('/assets/image.png');
+    height: 100%;
+  }
+  
+  .split {
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+     overflow-x: auto;
+    padding-top: 20px;
+  }
+  
+  .left {
+    left: 38%;
+     background-color:rgb(179, 245, 240);
+    
+  }
+  
+  
+  
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .centered img {
+    width: 150px;
+    border-radius: 50%;
+  }
+  

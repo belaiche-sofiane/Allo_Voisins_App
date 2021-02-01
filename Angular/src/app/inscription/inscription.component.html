@@ -1,0 +1,52 @@
+
+<div id=container>
+<form (ngSubmit)="onSubmit()" #inscriptionForm1="ngForm">
+ 
+    <label for="nom"> Nom </label>
+    <input type="text" class="form-control" placeholder="nom.." required [(ngModel)]="utilisateur['nom']" name="nom" />
+  <br/>
+   
+  
+    <label> Prenom </label>
+    <input type="text" class="form-control" placeholder="prenom.." required [(ngModel)]="utilisateur['prenom']" name="prenom" />
+
+<br/>
+   
+
+  <label> Email </label>
+  <input type="text" class="form-control" placeholder="email.." required [(ngModel)]="utilisateur['email']" name="email" />
+<br/>
+   
+
+
+
+  <label> Mot de passe </label>
+  <input type="password" class="form-control" placeholder="mot de passe.." required [(ngModel)]="utilisateur['password']" name="password" />
+
+  <br/>
+  
+  <label> Ville </label>
+  <input type="text" class="form-control" placeholder="ville" required [(ngModel)]="utilisateur['ville']" name="ville" />
+<br/>
+   
+
+
+
+  <label> Adresse </label>
+  <input type="text" class="form-control" placeholder="adresse" required [(ngModel)]="utilisateur['adresse']" name="adresse" />
+
+  <br/>
+  <label> Nnuméro de telephone </label>
+  <input type="text" class="form-control" placeholder="N° telephone" required [(ngModel)]="utilisateur['telephone']" name="telephone" />
+<br/>
+
+
+
+
+
+
+  <input type="submit" class="btn btn-outline-primary " value="Enregistrer"/>
+</form>
+<p> {{message}} </p>
+
+</div>
